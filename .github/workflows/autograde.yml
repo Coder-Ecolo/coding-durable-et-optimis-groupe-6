@@ -26,9 +26,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          # Correct branch/ref for both push and PR events
           ref: ${{ github.head_ref || github.ref_name || 'main' }}
-          fetch-depth: 0 # full history for pushing commits
+          fetch-depth: 0 # Full history for pushing commits
 
       # -----------------------------
       # SETUP PYTHON
@@ -66,7 +65,7 @@ jobs:
         continue-on-error: true
 
       # -----------------------------
-      # COMMIT REPORTS
+      # COMMIT REPORTS (FORCE)
       # -----------------------------
       - name: Commit all reports
         if: always()
@@ -76,20 +75,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Bot Éco-Coding"
 
-          # Ensure we are synced with remote to avoid conflicts
-          git fetch origin
+          # Ensure we are on the correct branch
           CURRENT_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME:-main}}"
+          git fetch origin
+          git checkout $CURRENT_BRANCH
           git reset --hard origin/$CURRENT_BRANCH
 
-          # Add report files if they exist
-          [ -f ECO_REPORT_DEBUTANT.md ] && git add ECO_REPORT_DEBUTANT.md
-          [ -f ECO_REPORT_AVANCE.md ] && git add ECO_REPORT_AVANCE.md
-          [ -f ECO_REPORT_EXPERT.md ] && git add ECO_REPORT_EXPERT.md
-
-          # Commit only if there are changes
-          if ! git diff --cached --quiet; then
-            git commit -m "🌱🚀💎 Mise à jour rapports Éco-Coding [skip ci]"
-            git push origin $CURRENT_BRANCH
-          else
-            echo "✅ No report changes to commit"
-          fi
+          # Force add and commit report files (overwrite every time)
+          git add ECO_REPORT_DEBUTANT.md ECO_REPORT_AVANCE.md ECO_REPORT_EXPERT.md
+          git commit -m "🌱🚀💎 Mise à jour rapports Éco-Coding [skip ci]" --allow-empty
+          git push origin $CURRENT_BRANCH

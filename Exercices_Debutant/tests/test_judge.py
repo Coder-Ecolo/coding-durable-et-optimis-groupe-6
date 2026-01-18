@@ -14,7 +14,7 @@ DEBUTANT_TESTS = [
     'Exercices_Debutant.tests.test_moteur_eco',
     'Exercices_Debutant.tests.test_nettoyer_mails',
     'Exercices_Debutant.tests.test_tri_eco',
-    'Exercices_Debutant.tests.test_totall_streaming',
+    'Exercices_Debutant.tests.test_total_streaming',
     'Exercices_Debutant.tests.test_supprimer_doublons',
     'Exercices_Debutant.tests.test_limiter_photos'
 ]
