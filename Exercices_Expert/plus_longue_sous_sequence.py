@@ -1,28 +1,20 @@
-# plus_long_sous_sequence.py
+from bisect import bisect_left
 
 def plus_long_sous_sequence(lst):
     """
     Trouver la longueur de la plus longue sous-séquence croissante.
-    
-    Version NAÏVE : vérifie toutes les sous-séquences → O(2^n)
 
-    Objectifs étudiants :
-    - Comprendre pourquoi c'est lent pour n>20
-    - Optimiser en O(n log n) en utilisant patience sorting + bisect
-
-    Exemple :
-    plus_long_sous_sequence([10,9,2,5,3,7,101,18]) -> 4
+    🌱 Optimisation :
+    - Patience sorting + bisect → O(n log n)
+    - Pas de récursion inutile
+    - Utilise mémoire minimale et opérations réduites
     """
-    n = len(lst)
-
-    # Fonction récursive naïve
-    def toutes_sous_seq(i, prev):
-        if i == n:
-            return 0
-        take = 0
-        if lst[i] > prev:
-            take = 1 + toutes_sous_seq(i+1, lst[i])
-        dont_take = toutes_sous_seq(i+1, prev)
-        return max(take, dont_take)
-
-    return toutes_sous_seq(0, float('-inf'))
+    sub = []  # sub[i] = smallest last element of an increasing subsequence of length i+1
+    for x in lst:
+        # Trouver l'emplacement où x peut aller
+        i = bisect_left(sub, x)
+        if i == len(sub):
+            sub.append(x)  # x prolonge la plus longue sous-séquence
+        else:
+            sub[i] = x     # x remplace un élément plus grand pour garder sub optimal
+    return len(sub)

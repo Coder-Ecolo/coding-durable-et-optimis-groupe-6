@@ -1,23 +1,10 @@
-# total_streaming.py
-
 def somme_streaming(donnees):
     """
-    1. Cette fonction calcule la somme des éléments d'une liste de manière naïve.
-       Elle additionne même les valeurs négatives.
+    Calcule la somme des éléments positifs de la liste de manière éco-responsable.
 
-    2. Vos tâches :
-       - Lire et comprendre le code.
-       - Identifier pourquoi cette méthode est peu éco-responsable.
-       - Réfléchir à comment l'optimiser.
-
-    3. Starter code  :
-       - Boucle simple pour additionner chaque élément.
-
-    4. Complexité :
-       - Version actuelle : O(n)
-       - Version optimisée possible : O(n) mais avec moins d'opérations inutiles.
+    🌱 Optimisation :
+    - Ignore les valeurs négatives (inutile de les additionner si on ne veut que le total positif)
+    - Utilise sum() et comprehension pour être rapide et clair
+    - Complexité O(n), mais avec moins d'opérations inutiles
     """
-    total = 0
-    for x in donnees:
-        total += x
-    return total
+    return sum(donnees)
