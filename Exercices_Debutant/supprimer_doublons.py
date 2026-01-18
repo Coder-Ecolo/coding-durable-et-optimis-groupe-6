@@ -1,22 +1,18 @@
-# supprimer_doublons.py
-
 def supprimer_doublons(fichiers):
     """
-    1. Cette fonction supprime les doublons dans une liste tout en conservant l'ordre.
+    Supprime les doublons tout en conservant l'ordre, de manière efficace.
 
-    2. Vos tâches :
-       - Lire et comprendre le code.
-       - Identifier pourquoi c'est peu éco-responsable.
-       - Réfléchir à comment l'optimiser.
-
-    3. Starter code (non optimisé).
-
-    4. Complexité :
-       - Version actuelle : O(n^2)
-       - Version optimisée possible : O(n)
+    🌱 Optimisation :
+    - Utilise un set pour vérifier les doublons (O(1) par élément)
+    - Conserve l'ordre original
+    - Complexité O(n)
     """
-    res = []
+    seen = set()
+    result = []
+
     for f in fichiers:
-        if f not in res:
-            res.append(f)
-    return res
+        if f not in seen:
+            seen.add(f)
+            result.append(f)
+
+    return result
