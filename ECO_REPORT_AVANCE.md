@@ -1,12 +1,12 @@
 # Rapport Éco-Coding - Exercices Avancé
 
-![Score](https://img.shields.io/badge/Score-0%25-red?style=for-the-badge)
+![Score](https://img.shields.io/badge/Score-1%25-red?style=for-the-badge)
 ![Grade](https://img.shields.io/badge/Note-F-red?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-ÉCHOUÉ-critical?style=for-the-badge)
 
-**Date:** 2026-01-18 03:07:24  
+**Date:** 2026-01-18 03:25:15  
 **Niveau:** Avancé  
-**Moyenne:** 0.5/100  
+**Moyenne:** 1.0/100  
 **Note:** F
 
 ---
@@ -23,7 +23,7 @@
 
 | Exercice | Score | Status | Barre de Progression |
 |----------|-------|--------|---------------------|
-| `fusion_listes` | **0/100** | FAIL | ░░░░░░░░░░░░░░░░░░░░ |
+| `compte_frequence` | **1/100** | FAIL | ░░░░░░░░░░░░░░░░░░░░ |
 | `trouver_sous_sequence` | **1/100** | FAIL | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---
@@ -42,7 +42,7 @@ Ton code gaspille BEAUCOUP d'énergie!
 ## Exercices par Score
 
 ### À Refaire (<60)
-- `fusion_listes` (0/100) - **OPTIMISATION REQUISE**
+- `compte_frequence` (1/100) - **OPTIMISATION REQUISE**
 - `trouver_sous_sequence` (1/100) - **OPTIMISATION REQUISE**
 
 
@@ -68,7 +68,7 @@ Ton code gaspille BEAUCOUP d'énergie!
 
 <div align="center">
 
-**Rapport généré automatiquement le 18/01/2026 à 03:07**  
+**Rapport généré automatiquement le 18/01/2026 à 03:25**  
 🌱 *Code écologique = Planète préservée* 🌍
 
 
