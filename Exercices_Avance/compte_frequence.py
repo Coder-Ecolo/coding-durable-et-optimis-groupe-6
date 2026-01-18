@@ -9,5 +9,5 @@ def compte_frequence(lst):
     """
     res = {}
     for x in lst:
-        res[x] = res.get(x, 0) + 1  # incrémente en une seule opération
+        res[x] = res.get(x, 0) + 1  # incrémente en une seule opération !
     return res

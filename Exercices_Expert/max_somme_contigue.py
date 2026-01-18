@@ -4,7 +4,7 @@ def max_somme_contigue(lst):
 
     🌱 Optimisation :
     - Parcourt la liste UNE SEULE FOIS
-    - Complexité O(n)
+    - Complexité O(n) seulement
     - Évite toutes les boucles imbriquées inutiles
     """
     if len(lst) == 0:
