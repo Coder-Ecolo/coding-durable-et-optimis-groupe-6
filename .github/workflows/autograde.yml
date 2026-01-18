@@ -67,26 +67,30 @@ jobs:
       # -----------------------------
       # COMMIT REPORTS (FORCE)
       # -----------------------------
+
       - name: Commit all reports
         if: always()
+        shell: bash
         run: |
           echo "📦 Preparing to commit reports..."
 
           git config --local user.email "action@github.com"
           git config --local user.name "Bot Éco-Coding"
 
+          # Use bash-friendly variable syntax
           CURRENT_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME:-main}}"
-          git fetch origin $CURRENT_BRANCH
-          git checkout $CURRENT_BRANCH
+          git fetch origin "$CURRENT_BRANCH"
+          git checkout "$CURRENT_BRANCH"
 
-          # Add only existing reports
-          [ -f ECO_REPORT_DEBUTANT.md ] && git add ECO_REPORT_DEBUTANT.md
-          [ -f ECO_REPORT_AVANCE.md ] && git add ECO_REPORT_AVANCE.md
-          [ -f ECO_REPORT_EXPERT.md ] && git add ECO_REPORT_EXPERT.md
+          # Add report files if they exist
+          if [ -f "ECO_REPORT_DEBUTANT.md" ]; then git add ECO_REPORT_DEBUTANT.md; fi
+          if [ -f "ECO_REPORT_AVANCE.md" ]; then git add ECO_REPORT_AVANCE.md; fi
+          if [ -f "ECO_REPORT_EXPERT.md" ]; then git add ECO_REPORT_EXPERT.md; fi
 
           # Commit only if changes exist
           if ! git diff --cached --quiet; then
             git commit -m "🌱🚀💎 Mise à jour rapports Éco-Coding [skip ci]"
-            git push origin $CURRENT_BRANCH
+            git push origin "$CURRENT_BRANCH"
           else
             echo "✅ Reports are up-to-date, nothing to commit"
+          fi
