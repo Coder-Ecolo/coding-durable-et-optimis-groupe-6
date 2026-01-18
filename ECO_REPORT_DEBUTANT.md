@@ -1,18 +1,18 @@
 # 🌍 Rapport Éco-Coding - Exercices Débutant
 
-![Score](https://img.shields.io/badge/Score-17%25-red?style=for-the-badge)
-![Grade](https://img.shields.io/badge/Note-F-red?style=for-the-badge)
+![Score](https://img.shields.io/badge/Score-57%25-orange?style=for-the-badge)
+![Grade](https://img.shields.io/badge/Note-D-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-ÉCHOUÉ-critical?style=for-the-badge)
 
-**Date:** 2026-01-18 02:17:26  
-**Moyenne:** 17.1/100  
-**Note:** F
+**Date:** 2026-01-18 03:07:24  
+**Moyenne:** 57.1/100  
+**Note:** D
 
 ---
 
-## 💀 Résultat Global
+## 😬 Résultat Global
 
-> ÉCHEC - Algorithmes catastrophiques!
+> Insuffisant - Revois les algorithmes
 
 **Validation:** ❌ Exercices NON VALIDÉS
 
@@ -23,11 +23,11 @@
 | Exercice | Score | Status | Barre de Progression |
 |----------|-------|--------|---------------------|
 | `recherche_eco` | **0/100** | ❌ FAIL | ░░░░░░░░░░░░░░░░░░░░ |
-| `nettoyer_mails` | **30/100** | ❌ FAIL | ██████░░░░░░░░░░░░░░ |
-| `tri_eco` | **30/100** | ❌ FAIL | ██████░░░░░░░░░░░░░░ |
+| `nettoyer_mails` | **100/100** | ✅ OK | ████████████████████ |
+| `tri_eco` | **100/100** | ✅ OK | ████████████████████ |
 | `somme_streaming` | **0/100** | ❌ FAIL | ░░░░░░░░░░░░░░░░░░░░ |
-| `supprimer_doublons` | **30/100** | ❌ FAIL | ██████░░░░░░░░░░░░░░ |
-| `limiter_photos` | **30/100** | ❌ FAIL | ██████░░░░░░░░░░░░░░ |
+| `supprimer_doublons` | **100/100** | ✅ OK | ████████████████████ |
+| `limiter_photos` | **100/100** | ✅ OK | ████████████████████ |
 | `compte_frequence` | **0/100** | ❌ FAIL | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---
@@ -45,13 +45,15 @@ Ton code gaspille BEAUCOUP d'énergie!
 
 ## Exercices par Score
 
+### 🏆 Excellent (≥90)
+- ✅ `nettoyer_mails` (100/100)
+- ✅ `tri_eco` (100/100)
+- ✅ `supprimer_doublons` (100/100)
+- ✅ `limiter_photos` (100/100)
+
 ### ❌ À Refaire (<60)
 - ❌ `recherche_eco` (0/100) - **OPTIMISATION REQUISE**
-- ❌ `nettoyer_mails` (30/100) - **OPTIMISATION REQUISE**
-- ❌ `tri_eco` (30/100) - **OPTIMISATION REQUISE**
 - ❌ `somme_streaming` (0/100) - **OPTIMISATION REQUISE**
-- ❌ `supprimer_doublons` (30/100) - **OPTIMISATION REQUISE**
-- ❌ `limiter_photos` (30/100) - **OPTIMISATION REQUISE**
 - ❌ `compte_frequence` (0/100) - **OPTIMISATION REQUISE**
 
 
@@ -78,7 +80,7 @@ Ton code gaspille BEAUCOUP d'énergie!
 
 <div align="center">
 
-**Rapport généré automatiquement le 18/01/2026 à 02:17**  
+**Rapport généré automatiquement le 18/01/2026 à 03:07**  
 🌱 *Code écologique = Planète préservée* 🌍
 
 </div>
