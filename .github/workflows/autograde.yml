@@ -20,18 +20,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current branch
+      # -----------------------------
+      # CHECKOUT
+      # -----------------------------
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          # Correct branch/ref for both push and PR events
+          ref: ${{ github.head_ref || github.ref_name || 'main' }}
+          fetch-depth: 0 # full history for pushing commits
 
+      # -----------------------------
+      # SETUP PYTHON
+      # -----------------------------
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
       # -----------------------------
-      # DÉBUTANT
+      # DÉBUTANT TESTS
       # -----------------------------
       - name: Tests Débutant
         run: |
@@ -40,7 +48,7 @@ jobs:
         continue-on-error: true
 
       # -----------------------------
-      # AVANCÉ
+      # AVANCÉ TESTS
       # -----------------------------
       - name: Tests Avancé
         run: |
@@ -49,7 +57,7 @@ jobs:
         continue-on-error: true
 
       # -----------------------------
-      # EXPERT
+      # EXPERT TESTS
       # -----------------------------
       - name: Tests Expert
         run: |
@@ -68,17 +76,20 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Bot Éco-Coding"
 
-          # Only add files if they exist
+          # Ensure we are synced with remote to avoid conflicts
+          git fetch origin
+          CURRENT_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME:-main}}"
+          git reset --hard origin/$CURRENT_BRANCH
+
+          # Add report files if they exist
           [ -f ECO_REPORT_DEBUTANT.md ] && git add ECO_REPORT_DEBUTANT.md
           [ -f ECO_REPORT_AVANCE.md ] && git add ECO_REPORT_AVANCE.md
           [ -f ECO_REPORT_EXPERT.md ] && git add ECO_REPORT_EXPERT.md
 
-          # Commit only if something changed
+          # Commit only if there are changes
           if ! git diff --cached --quiet; then
             git commit -m "🌱🚀💎 Mise à jour rapports Éco-Coding [skip ci]"
-            CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-            git pull --rebase origin "$CURRENT_BRANCH"
-            git push origin "$CURRENT_BRANCH"
+            git push origin $CURRENT_BRANCH
           else
             echo "✅ No report changes to commit"
           fi
