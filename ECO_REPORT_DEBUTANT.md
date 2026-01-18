@@ -1,11 +1,11 @@
 # 🌍 Rapport Éco-Coding - Exercices Débutant
 
-![Score](https://img.shields.io/badge/Score-98%25-brightgreen?style=for-the-badge)
+![Score](https://img.shields.io/badge/Score-91%25-brightgreen?style=for-the-badge)
 ![Grade](https://img.shields.io/badge/Note-A%2B-brightgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-VALIDÉ-success?style=for-the-badge)
 
-**Date:** 2026-01-18 03:44:19  
-**Moyenne:** 98.3/100  
+**Date:** 2026-01-18 03:44:23  
+**Moyenne:** 91.7/100  
 **Note:** A+
 
 ---
@@ -22,7 +22,7 @@
 
 | Exercice | Score | Status | Barre de Progression |
 |----------|-------|--------|---------------------|
-| `moteur_eco` | **100/100** | ✅ OK | ████████████████████ |
+| `moteur_eco` | **60/100** | ✅ OK | ████████████░░░░░░░░ |
 | `nettoyer_mails` | **100/100** | ✅ OK | ████████████████████ |
 | `tri_eco` | **100/100** | ✅ OK | ████████████████████ |
 | `total_streaming` | **90/100** | ✅ OK | ██████████████████░░ |
@@ -44,12 +44,14 @@ Ton code économise beaucoup d'énergie! Continue comme ça! 🌍
 ## Exercices par Score
 
 ### 🏆 Excellent (≥90)
-- ✅ `moteur_eco` (100/100)
 - ✅ `nettoyer_mails` (100/100)
 - ✅ `tri_eco` (100/100)
 - ✅ `total_streaming` (90/100)
 - ✅ `supprimer_doublons` (100/100)
 - ✅ `limiter_photos` (100/100)
+
+### ⚠️ Passable (60-69)
+- ⚠️ `moteur_eco` (60/100)
 
 
 ---
